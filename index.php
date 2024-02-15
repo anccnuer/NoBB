@@ -2,15 +2,15 @@
 require 'lib/flight/Flight.php';
 require 'lib/Medoo/Medoo.php';
 use Medoo\Medoo;
-require_once 'config.php';
+require_once 'src/config.php';
 
 // Medoo初始化mysql
 $database = new Medoo([
 	'type' => 'mysql',
-	'host' => 'DB_HOST',
-	'database' => 'DB_USER',
-	'username' => 'DB_NAME',
-	'password' => 'DB_PASS',
+	'host' => DB_HOST,
+	'database' => DB_NAME,
+	'username' => DB_USER,
+	'password' => DB_PASS,
 ]);
 Flight::set('database', $database);//全局注册
 
