@@ -25,24 +25,7 @@ Flight::before('start', function(){
 
 
 Flight::route('/', function(){
-  echo 'hello world!';
-});
-
-Flight::route('/get', function(){
-  $db = Flight::db();
-  $stmt = $db->query('SELECT * FROM copy');
-  $stmt->execute();
-  $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  Flight::json($data);
-});
-
-Flight::route('POST /change', function(){
-  $db = Flight::db();
-  $value = Flight::request()->data->value;
-  $stmt = $db->prepare('UPDATE copy SET value = :value WHERE id = 1');
-  $stmt->bindParam(':value', $value, PDO::PARAM_STR);
-  $stmt->execute();
-  Flight::json($value);
+  echo 'hello NoBB!';
 });
 
 Flight::route('GET /uesMedoo',function(){
